@@ -1,0 +1,26 @@
+text,label
+The mobile app throws an error whenever I rotate my screen,bug
+Images won't load in the gallery after the last update,bug
+Login fails with a weird message about a bad token,bug
+The app freezes for ages when I scroll through my feed,bug
+Sync broke overnight and none of my notes are showing,bug
+I see a duplicate payment on my bank statement,billing
+Please send me an invoice with our company VAT number,billing
+My free trial ended early and I got charged,billing
+How much will I pay if I add five more seats,billing
+I would like my money back for the annual plan,billing
+Absolutely adore the redesign it feels so modern,praise
+Your team is wonderful and so responsive,praise
+This tool changed how I run my weekly meetings and I am grateful,praise
+Such a smooth experience from start to finish,praise
+Excellent release and the speed gains are obvious,praise
+What steps do I take to change my username,support
+Can someone explain how to invite a guest to a project,support
+Where can I download my past statements,support
+How do I link my account to my phone number,support
+What happens to my files if I switch plans,support
+Would be awesome to have a widget for the home screen,feature_request
+Please build a Zapier integration,feature_request
+Can we get a way to pin important conversations,feature_request
+It would be useful to filter reports by date range,feature_request
+I would love an option to export charts as images,feature_request

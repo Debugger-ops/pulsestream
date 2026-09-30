@@ -1,0 +1,3 @@
+# Optional: semantic features for `python3 model/train.py --backend embeddings`
+-r requirements.txt
+sentence-transformers>=3.0

@@ -1,0 +1,382 @@
+text,label
+"Hi there, your support team solved my issue in minutes, amazing",praise
+"Good morning, could you add a way to tag items with colors",feature_request
+"Hey, why did my invoice go up this month on my phone",billing
+"Really happy with the update, everything feels polished, any ideas?",praise
+"Hi there, how do I update the credit card on my account - thanks",billing
+"Please cancel my subscription before the next billing date, any ideas?",billing
+There is an unknown charge on my statement from your company,billing
+"Hi there, I was billed after I already cancelled, any ideas?",billing
+Urgent: I want to downgrade my plan and get the difference back as soon as possible,billing
+"Urgent: thank you, this saved me hours of work every week",praise
+"Hi there, the design is beautiful and really easy to use.",praise
+"Hi, five stars, it does exactly what I need, please help",praise
+"Hey, please let us customize the dashboard widgets",feature_request
+"Hi there, I recommend this to all my friends, brilliant product as soon as possible",praise
+"Hey, the app is stuck on the loading spinner forever",bug
+"Quick question: the new dashboard is fantastic, so clean and fast",praise
+"Hi there, can you switch me from monthly to annual billing as soon as possible",billing
+"Hi there, please let us customize the dashboard widgets!",feature_request
+"Hi there, could you add a way to tag items with colors!",feature_request
+"Hey, dark mode makes the text unreadable in the sidebar on the web version",bug
+"Hi there, I get a blank white screen after logging in, please help",bug
+"Quick question: I was charged twice for the same subscription, please help",billing
+"Hello team, can you support sign in with Google on the web version",feature_request
+"Quick question: five stars, it does exactly what I need",praise
+Where do I change my email address on my phone,support
+Please consider adding bulk editing as soon as possible,feature_request
+Notifications are not showing up even though they are enabled,bug
+"Hi there, the design is beautiful and really easy to use on my phone",praise
+"Hey, dark mode makes the text unreadable in the sidebar on my phone",bug
+"Hi, would love to see integration with Slack",feature_request
+How do I delete my account,support
+"Good morning, we need role based permissions for larger teams",feature_request
+Can I use the app on two devices at once,support
+"Hi there, this is the best app I have used all year.",praise
+Do you offer a student discount,billing
+"The coupon code was not applied at checkout, any ideas?",billing
+"Add an option to duplicate a project please, please help",feature_request
+"Good morning, can you add an option to schedule posts",feature_request
+"Hey, what is the difference between the free and pro plans, any ideas?",support
+"Hi, the app logs me out every few minutes",bug
+"Hello team, is there a way to export all my data, any ideas?",support
+"Good morning, your support team solved my issue in minutes, amazing",praise
+Quick question: do you offer a student discount on the web version,billing
+Urgent: I upgraded my plan but I was not credited for the unused time,billing
+"My payment is stuck as pending for three days, please help",billing
+"Love the new dark mode, great update",praise
+Quick question: can you support sign in with Google,feature_request
+"We need role based permissions for larger teams, any ideas?",feature_request
+"Hello team, how do I recover a project I deleted by mistake, any ideas?",support
+"Hello team, where do I change my email address",support
+"Hey, it would be nice to have a calendar view, please help",feature_request
+"Hi, search returns an error 500 every time as soon as possible",bug
+"Hi there, can you add an option to schedule posts",feature_request
+"Hi there, please add support for exporting to CSV since yesterday",feature_request
+"Hi there, I forgot which email I signed up with, any ideas?",support
+"Good morning, can you support sign in with Google, please help",feature_request
+"Quick question: five stars, it does exactly what I need as soon as possible",praise
+"Hi there, is there a guide for getting started since yesterday",support
+Please let us customize the dashboard widgets on the web version,feature_request
+Quick question: uploads fail at 99 percent with a network error - thanks,bug
+"Hi there, could you add a way to tag items with colors.",feature_request
+Please add a public API so we can automate this.,feature_request
+"Hey, add an option to duplicate a project please",feature_request
+"Hey, I am impressed by how fast everything loads now - thanks",praise
+"Urgent: how do I enable two factor authentication, please help",support
+"Hello team, can you explain how the sharing permissions work on the web version",support
+"Hey, my profile picture disappears after I refresh!",bug
+"How do I delete my account, please help",support
+"Hi, huge thanks to the team for the quick fix",praise
+"Five stars, it does exactly what I need.",praise
+"Hi, notifications are not showing up even though they are enabled - thanks",bug
+"Good morning, the app logs me out every few minutes on my phone",bug
+I wish there was a dark theme for the mobile app!,feature_request
+"Hello team, how do I enable two factor authentication since yesterday",support
+"Hey, it would be great if you added a keyboard shortcut for search",feature_request
+"Hi, what is the difference between the free and pro plans - thanks",support
+"Hey, add an option to duplicate a project please - thanks",feature_request
+"Hello team, where can I find the API documentation on my phone",support
+"The latest release is super smooth, well done, any ideas?",praise
+"Urgent: the new dashboard is fantastic, so clean and fast, any ideas?",praise
+Urgent: my profile picture disappears after I refresh as soon as possible,bug
+"Hey, I was billed after I already cancelled",billing
+The tax amount on my invoice looks wrong.,billing
+I was charged twice for the same subscription as soon as possible,billing
+"Good morning, I forgot which email I signed up with.",support
+"Hi there, is there a guide for getting started",support
+"Good morning, it would help a lot to have an offline mode!",feature_request
+"Good morning, the export to PDF produces an empty file!",bug
+"Good morning, the app is stuck on the loading spinner forever, please help",bug
+"Hi, why did my invoice go up this month as soon as possible",billing
+"Hi there, the export to PDF produces an empty file as soon as possible",bug
+Quick question: please add support for exporting to CSV as soon as possible,feature_request
+Urgent: where is the option to change the language since yesterday,support
+"Hi there, really happy with the update, everything feels polished on my phone",praise
+"Hey, the export to PDF produces an empty file on the web version",bug
+"Hi, can you switch me from monthly to annual billing on my phone",billing
+"Hi there, an undo button would be really useful!",feature_request
+"How can I add a teammate to my workspace, any ideas?",support
+"Quick question: it would be nice to have a calendar view, please help",feature_request
+"Good morning, I want to downgrade my plan and get the difference back since yesterday",billing
+Can you add an option to schedule posts since yesterday,feature_request
+Urgent: the export to PDF produces an empty file!,bug
+"Hey, how do I reset my password",support
+I need a receipt for my payment last week as soon as possible,billing
+"Hi there, love the new dark mode, great update, any ideas?",praise
+"Hi there, can you add an option to schedule posts, any ideas?",feature_request
+"Hey, the app keeps crashing when I upload a photo on my phone",bug
+"Good morning, we need role based permissions for larger teams!",feature_request
+"Can I use the app on two devices at once, please help",support
+"Hello team, please add a public API so we can automate this, please help",feature_request
+"Good morning, would love to see integration with Slack since yesterday",feature_request
+"Hello team, the new dashboard is fantastic, so clean and fast, any ideas?",praise
+"Hi, please add support for exporting to CSV as soon as possible",feature_request
+"Good morning, I upgraded my plan but I was not credited for the unused time since yesterday",billing
+"Good morning, whoever built the search feature deserves a raise",praise
+"Hi there, I recommend this to all my friends, brilliant product",praise
+"Hi there, the app keeps crashing when I upload a photo",bug
+"Good morning, could you add a way to tag items with colors as soon as possible",feature_request
+"Good morning, how do I connect my calendar",support
+"Hey, I would like a weekly summary email of my activity",feature_request
+"Good morning, I wish there was a dark theme for the mobile app!",feature_request
+"Hello team, I would like a weekly summary email of my activity!",feature_request
+"Search returns an error 500 every time, any ideas?",bug
+"Quick question: huge thanks to the team for the quick fix, any ideas?",praise
+"Hey, what is the difference between the free and pro plans.",support
+Quick question: uploads fail at 99 percent with a network error.,bug
+"Hi, is there a way to export all my data!",support
+"Hello team, the onboarding was delightful, nicely done",praise
+Where do I change my email address!,support
+Urgent: I get a blank white screen after logging in,bug
+Urgent: notifications are not showing up even though they are enabled on my phone,bug
+"Good morning, where is the option to change the language",support
+It would help a lot to have an offline mode as soon as possible,feature_request
+Please cancel my subscription before the next billing date,billing
+"Hi there, please add a public API so we can automate this - thanks",feature_request
+"Good morning, the video player stops after ten seconds!",bug
+Urgent: is there a guide for getting started,support
+"Huge thanks to the team for the quick fix, please help",praise
+"Hi, I wish there was a dark theme for the mobile app.",feature_request
+"Hey, my payment is stuck as pending for three days",billing
+Quick question: how can I add a teammate to my workspace!,support
+"Hi, this is the best app I have used all year!",praise
+Is there a way to export all my data,support
+"Hi, how do I enable two factor authentication",support
+Where can I find the API documentation,support
+"Hi there, how do I update the credit card on my account",billing
+"Hey, can you explain how the sharing permissions work.",support
+Urgent: please cancel my subscription before the next billing date,billing
+My card was declined but the money left my account.,billing
+"Hi, whoever built the search feature deserves a raise on the web version",praise
+Urgent: please let us customize the dashboard widgets,feature_request
+"Hello team, the design is beautiful and really easy to use as soon as possible",praise
+"Hello team, please consider adding bulk editing on my phone",feature_request
+"The new dashboard is fantastic, so clean and fast on the web version",praise
+"I cannot save changes, the save button just spins!",bug
+Quick question: I was charged twice for the same subscription,billing
+"Dark mode makes the text unreadable in the sidebar, any ideas?",bug
+"Hey, keep up the great work, I use it every day, any ideas?",praise
+"Hey, my profile picture disappears after I refresh as soon as possible",bug
+"Hey, how can I add a teammate to my workspace, any ideas?",support
+"Hello team, I was billed after I already cancelled, any ideas?",billing
+"Thank you, this saved me hours of work every week as soon as possible",praise
+"Hi, I recommend this to all my friends, brilliant product!",praise
+"Hi, the page freezes whenever I open the settings tab",bug
+"Hi, I wish there was a dark theme for the mobile app on the web version",feature_request
+"Hi there, the latest release is super smooth, well done as soon as possible",praise
+Urgent: the export to PDF produces an empty file,bug
+Urgent: it would be great if you added a keyboard shortcut for search on the web version,feature_request
+"Hi, checkout button does nothing on mobile Safari",bug
+Quick question: the video player stops after ten seconds since yesterday,bug
+Urgent: I get a blank white screen after logging in on my phone,bug
+Urgent: my card was declined but the money left my account - thanks,billing
+What is the difference between the free and pro plans,support
+Urgent: an undo button would be really useful since yesterday,feature_request
+"Quick question: really happy with the update, everything feels polished since yesterday",praise
+"Hey, an undo button would be really useful.",feature_request
+"Hi, it would help a lot to have an offline mode since yesterday",feature_request
+Quick question: would love to see integration with Slack,feature_request
+"Good morning, how do I turn off email notifications, any ideas?",support
+Quick question: is there a guide for getting started on the web version,support
+This is the best app I have used all year!,praise
+It would be great if you added a keyboard shortcut for search,feature_request
+Quick question: can I use the app on two devices at once on my phone,support
+"Hi there, search returns an error 500 every time, please help",bug
+"Hello team, the app logs me out every few minutes",bug
+"Hi there, uploads fail at 99 percent with a network error!",bug
+"Good morning, the video player stops after ten seconds - thanks",bug
+"Hey, how do I delete my account",support
+Buttons overlap each other on my tablet.,bug
+"Hello team, the new layout is a huge improvement, thank you!",praise
+"Hello team, how do I connect my calendar",support
+"Hello team, I cannot save changes, the save button just spins since yesterday",bug
+Quick question: I am impressed by how fast everything loads now.,praise
+Urgent: the video player stops after ten seconds since yesterday,bug
+"Hello team, the page freezes whenever I open the settings tab, please help",bug
+"Good morning, the tax amount on my invoice looks wrong on the web version",billing
+"Good morning, whoever built the search feature deserves a raise, any ideas?",praise
+The app logs me out every few minutes!,bug
+Quick question: the app keeps crashing when I upload a photo since yesterday,bug
+"Hi there, is there a guide for getting started, any ideas?",support
+"Good morning, I need a receipt for my payment last week",billing
+"The latest release is super smooth, well done - thanks",praise
+Please cancel my subscription before the next billing date on my phone,billing
+"Urgent: keep up the great work, I use it every day!",praise
+"I recommend this to all my friends, brilliant product as soon as possible",praise
+Quick question: why did my invoice go up this month,billing
+"The latest release is super smooth, well done.",praise
+Quick question: checkout button does nothing on mobile Safari,bug
+"Hello team, there is an unknown charge on my statement from your company as soon as possible",billing
+"Good morning, keep up the great work, I use it every day as soon as possible",praise
+Please cancel my subscription before the next billing date - thanks,billing
+"Hello team, the coupon code was not applied at checkout as soon as possible",billing
+"Hey, please consider adding bulk editing!",feature_request
+Buttons overlap each other on my tablet as soon as possible,bug
+"Hi, can you explain how the sharing permissions work.",support
+"Hello team, how do I delete my account, please help",support
+It would be great if you added a keyboard shortcut for search since yesterday,feature_request
+"Good morning, where do I change my email address",support
+"Urgent: thank you, this saved me hours of work every week on the web version",praise
+"Hello team, how do I connect my calendar - thanks",support
+"Hello team, how do I turn off email notifications",support
+"Checkout button does nothing on mobile Safari, any ideas?",bug
+"Hello team, please add a public API so we can automate this since yesterday",feature_request
+Urgent: can I get a refund for my last order on my phone,billing
+"Your support team solved my issue in minutes, amazing, any ideas?",praise
+"I recommend this to all my friends, brilliant product",praise
+I need a receipt for my payment last week,billing
+"Checkout button does nothing on mobile Safari, please help",bug
+The date picker shows the wrong month,bug
+"Hi, my payment is stuck as pending for three days as soon as possible",billing
+"Hello team, buttons overlap each other on my tablet",bug
+"Hi, I forgot which email I signed up with, any ideas?",support
+"Hi, can you switch me from monthly to annual billing.",billing
+Quick question: the date picker shows the wrong month as soon as possible,bug
+"Good morning, really happy with the update, everything feels polished on the web version",praise
+"Keep up the great work, I use it every day, please help",praise
+"Quick question: your support team solved my issue in minutes, amazing, any ideas?",praise
+"Hi there, can I get a refund for my last order on my phone",billing
+Urgent: would love to see integration with Slack since yesterday,feature_request
+"Hey, I was billed after I already cancelled.",billing
+What is the difference between the free and pro plans!,support
+"Hey, I upgraded my plan but I was not credited for the unused time since yesterday",billing
+The app keeps crashing when I upload a photo,bug
+How do I delete my account since yesterday,support
+"Love the new dark mode, great update, any ideas?",praise
+"Good morning, the onboarding was delightful, nicely done.",praise
+"Hi, please let us customize the dashboard widgets",feature_request
+"The date picker shows the wrong month, please help",bug
+"Hello team, my card was declined but the money left my account - thanks",billing
+"Good morning, I cannot save changes, the save button just spins on the web version",bug
+"Hey, I want to downgrade my plan and get the difference back",billing
+"Good morning, an undo button would be really useful as soon as possible",feature_request
+"Good morning, I upgraded my plan but I was not credited for the unused time on my phone",billing
+"Can I get a refund for my last order, please help",billing
+"The page freezes whenever I open the settings tab, any ideas?",bug
+"I cannot save changes, the save button just spins",bug
+Buttons overlap each other on my tablet on my phone,bug
+"Hello team, really happy with the update, everything feels polished, please help",praise
+Urgent: there is an unknown charge on my statement from your company - thanks,billing
+"Hello team, we need role based permissions for larger teams as soon as possible",feature_request
+"Hi, this is the best app I have used all year.",praise
+Notifications are not showing up even though they are enabled on my phone,bug
+"Hi there, I was billed after I already cancelled - thanks",billing
+Where is the option to change the language,support
+"Hello team, would love to see integration with Slack",feature_request
+"Hello team, notifications are not showing up even though they are enabled, any ideas?",bug
+Urgent: dark mode makes the text unreadable in the sidebar - thanks,bug
+"Hi, where do I change my email address",support
+How do I connect my calendar!,support
+Where can I find the API documentation since yesterday,support
+"Hi there, can I get a refund for my last order - thanks",billing
+"Hey, can I get a refund for my last order",billing
+"Hi there, how do I update the credit card on my account!",billing
+"Hey, the video player stops after ten seconds",bug
+How do I enable two factor authentication since yesterday,support
+"How do I reset my password, please help",support
+Urgent: how can I add a teammate to my workspace,support
+"Hello team, where is the option to change the language on the web version",support
+"The onboarding was delightful, nicely done on the web version",praise
+"The app is stuck on the loading spinner forever, any ideas?",bug
+"Hey, the app keeps crashing when I upload a photo",bug
+How do I turn off email notifications,support
+Is there a way to export all my data!,support
+"Hi there, keep up the great work, I use it every day",praise
+"Hi there, the page freezes whenever I open the settings tab",bug
+Can you support sign in with Google,feature_request
+I get a blank white screen after logging in.,bug
+Urgent: this is the best app I have used all year - thanks,praise
+"Hello team, the new layout is a huge improvement, thank you",praise
+"Hello team, how do I reset my password",support
+"Hello team, it would be nice to have a calendar view",feature_request
+"Hi there, please add support for exporting to CSV",feature_request
+"Hello team, there is an unknown charge on my statement from your company.",billing
+"Hi, it would be great if you added a keyboard shortcut for search",feature_request
+"Good morning, I cannot save changes, the save button just spins",bug
+The coupon code was not applied at checkout.,billing
+"Hi, where can I find the API documentation on the web version",support
+"Quick question: can you explain how the sharing permissions work, any ideas?",support
+"Good morning, the date picker shows the wrong month, please help",bug
+"Hey, the design is beautiful and really easy to use on my phone",praise
+"Hey, where is the option to change the language on the web version",support
+Quick question: do you offer a student discount as soon as possible,billing
+Quick question: I forgot which email I signed up with since yesterday,support
+"Hi, my profile picture disappears after I refresh",bug
+"Thank you, this saved me hours of work every week, any ideas?",praise
+My payment is stuck as pending for three days since yesterday,billing
+"Hi there, whoever built the search feature deserves a raise.",praise
+"Hey, the coupon code was not applied at checkout on the web version",billing
+"Quick question: where can I find the API documentation, any ideas?",support
+Please add support for exporting to CSV since yesterday,feature_request
+"Hey, five stars, it does exactly what I need",praise
+"Hey, I am impressed by how fast everything loads now",praise
+I get a blank white screen after logging in on my phone,bug
+"Good morning, I need a receipt for my payment last week as soon as possible",billing
+"Urgent: how do I enable two factor authentication, any ideas?",support
+"Good morning, the tax amount on my invoice looks wrong.",billing
+"Hi there, the design is beautiful and really easy to use, any ideas?",praise
+Quick question: we need role based permissions for larger teams.,feature_request
+"Hey, the new dashboard is fantastic, so clean and fast as soon as possible",praise
+Please add a public API so we can automate this since yesterday,feature_request
+"Hi there, how do I recover a project I deleted by mistake",support
+An undo button would be really useful on the web version,feature_request
+Why did my invoice go up this month,billing
+"Good morning, dark mode makes the text unreadable in the sidebar on my phone",bug
+"Hey, there is an unknown charge on my statement from your company on the web version",billing
+My card was declined but the money left my account since yesterday,billing
+"Hey, how do I recover a project I deleted by mistake, please help",support
+"Hi, the app logs me out every few minutes since yesterday",bug
+"The new layout is a huge improvement, thank you.",praise
+Quick question: I would like a weekly summary email of my activity,feature_request
+"Thank you, this saved me hours of work every week",praise
+How do I reset my password since yesterday,support
+How do I update the credit card on my account on the web version,billing
+"Good morning, can you support sign in with Google since yesterday",feature_request
+"Good morning, I forgot which email I signed up with",support
+"Good morning, can you explain how the sharing permissions work, any ideas?",support
+The coupon code was not applied at checkout on the web version,billing
+Quick question: the app is stuck on the loading spinner forever,bug
+"Hi there, I was charged twice for the same subscription, please help",billing
+"Hey, add an option to duplicate a project please, please help",feature_request
+"Good morning, I was charged twice for the same subscription since yesterday",billing
+"Hi, buttons overlap each other on my tablet, please help",bug
+"Hey, the onboarding was delightful, nicely done",praise
+"Hello team, could you add a way to tag items with colors",feature_request
+Can I use the app on two devices at once!,support
+How do I turn off email notifications!,support
+"Love the new dark mode, great update, please help",praise
+Quick question: can you switch me from monthly to annual billing on the web version,billing
+It would help a lot to have an offline mode on the web version,feature_request
+Quick question: huge thanks to the team for the quick fix - thanks,praise
+"Hey, I upgraded my plan but I was not credited for the unused time.",billing
+"Hello team, it would help a lot to have an offline mode since yesterday",feature_request
+"Hey, the tax amount on my invoice looks wrong - thanks",billing
+"Love the new dark mode, great update on the web version",praise
+Do you offer a student discount on the web version,billing
+"Hi there, the latest release is super smooth, well done, any ideas?",praise
+"Hey, I am impressed by how fast everything loads now, any ideas?",praise
+"Hi, how can I add a teammate to my workspace",support
+"Hi, why did my invoice go up this month",billing
+"Hi there, the date picker shows the wrong month!",bug
+Urgent: it would be nice to have a calendar view,feature_request
+I would like a weekly summary email of my activity on the web version,feature_request
+"Hey, how do I turn off email notifications",support
+I want to downgrade my plan and get the difference back on my phone,billing
+Urgent: please consider adding bulk editing,feature_request
+Uploads fail at 99 percent with a network error,bug
+"Hello team, can you add an option to schedule posts",feature_request
+How do I reset my password!,support
+I am impressed by how fast everything loads now on the web version,praise
+Search returns an error 500 every time on my phone,bug
+The app is stuck on the loading spinner forever since yesterday,bug
+"Hi, I would like a weekly summary email of my activity on the web version",feature_request
+"Good morning, I need a receipt for my payment last week!",billing
+How do I recover a project I deleted by mistake as soon as possible,support
+"Hi, how do I recover a project I deleted by mistake.",support
+"Good morning, huge thanks to the team for the quick fix",praise
+"Good morning, I wish there was a dark theme for the mobile app as soon as possible",feature_request
+Quick question: the page freezes whenever I open the settings tab,bug
+"The new layout is a huge improvement, thank you",praise
+"Hi there, whoever built the search feature deserves a raise!",praise
+"Urgent: my card was declined but the money left my account, please help",billing
