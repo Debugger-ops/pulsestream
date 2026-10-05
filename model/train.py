@@ -3,6 +3,7 @@ Trains the ticket classifier used by consumer/consumer.py.
 
     python3 model/train.py                        # TF-IDF + Logistic Regression (fast, default)
     python3 model/train.py --backend embeddings   # sentence-transformer embeddings + Logistic Regression
+    python3 model/train.py --with-feedback        # also learn from corrections made in the dashboard
 
 Evaluation is honest on purpose:
   * 5-fold cross-validation on data/tickets.csv (synthetic, phrasing-varied)
@@ -34,6 +35,21 @@ def load_csv(path):
     return [r["text"] for r in rows], [r["label"] for r in rows]
 
 
+def load_feedback(path, valid_labels):
+    """Corrections saved by the dashboard -> (texts, labels). Later corrections of the same text win."""
+    latest = {}
+    p = Path(path)
+    if p.exists():
+        for line in p.read_text(encoding="utf-8").splitlines():
+            try:
+                row = json.loads(line)
+                if row["correct_label"] in valid_labels and row["text"].strip():
+                    latest[row["text"].strip()] = row["correct_label"]
+            except (ValueError, KeyError):
+                continue
+    return list(latest), list(latest.values())
+
+
 def build_pipeline(backend: str) -> Pipeline:
     if backend == "embeddings":
         from model.features import EmbeddingVectorizer
@@ -48,11 +64,22 @@ def main():
     ap.add_argument("--backend", choices=["tfidf", "embeddings"], default="tfidf")
     ap.add_argument("--data", default=str(config.DATA_FILE))
     ap.add_argument("--holdout", default=str(config.ROOT / "data" / "holdout.csv"))
+    ap.add_argument("--with-feedback", action="store_true",
+                    help="add human corrections from data/feedback.jsonl to the training data")
+    ap.add_argument("--feedback", default=str(config.FEEDBACK_PATH))
     args = ap.parse_args()
 
     X, y = load_csv(args.data)
     Xh, yh = load_csv(args.holdout)
-    print(f"train: {len(X)} rows | holdout: {len(Xh)} rows | backend: {args.backend}")
+    n_feedback = 0
+    if args.with_feedback:
+        fx, fy = load_feedback(args.feedback, set(y))
+        holdout_texts = {t.strip() for t in Xh}
+        keep = [i for i, t in enumerate(fx) if t not in holdout_texts]   # never train on the holdout set
+        X += [fx[i] for i in keep]
+        y += [fy[i] for i in keep]
+        n_feedback = len(keep)
+    print(f"train: {len(X)} rows ({n_feedback} from feedback) | holdout: {len(Xh)} rows | backend: {args.backend}")
 
     pipe = build_pipeline(args.backend)
     cv = cross_val_score(pipe, X, y, cv=5, scoring="f1_macro")
@@ -63,6 +90,7 @@ def main():
     metrics = {
         "backend": args.backend,
         "train_rows": len(X),
+        "feedback_rows": n_feedback,
         "holdout_rows": len(Xh),
         "labels": labels,
         "cv_macro_f1_mean": round(float(cv.mean()), 4),

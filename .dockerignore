@@ -1,0 +1,10 @@
+.venv
+.git
+__pycache__
+*.pyc
+node_modules
+frontend
+notebooks
+.ipynb_checkpoints
+.pytest_cache
+tests

@@ -9,10 +9,11 @@ services:
     environment:
       KAFKA_NODE_ID: 1
       KAFKA_PROCESS_ROLES: broker,controller
-      KAFKA_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093,INTERNAL://:29092
+      # host tools use localhost:9092; the containers below use kafka:29092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092,INTERNAL://kafka:29092
       KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,INTERNAL:PLAINTEXT
       KAFKA_CONTROLLER_QUORUM_VOTERS: 1@localhost:9093
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
@@ -23,3 +24,41 @@ services:
       interval: 10s
       timeout: 10s
       retries: 12
+
+  # ---- optional app containers:  docker compose --profile app up -d --build   (or `make stack`)
+  # Needs a trained model first (`make train`) - model/artifacts is mounted in, not baked into the image.
+  consumer:
+    profiles: ["app"]
+    build: .
+    container_name: pulsestream-consumer
+    command: python consumer/consumer.py
+    environment:
+      KAFKA_BROKER: kafka:29092
+    volumes:
+      - ./model/artifacts:/app/model/artifacts:ro
+    depends_on:
+      kafka:
+        condition: service_healthy
+    restart: unless-stopped
+
+  backend:
+    profiles: ["app"]
+    build: .
+    container_name: pulsestream-backend
+    command: uvicorn backend.app:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    environment:
+      KAFKA_BROKER: kafka:29092
+    volumes:
+      - ./model/artifacts:/app/model/artifacts:ro
+      - ./data:/app/data            # corrections are written to data/feedback.jsonl
+    depends_on:
+      kafka:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped

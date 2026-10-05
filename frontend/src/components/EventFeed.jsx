@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { labelMeta } from "../config.js";
+import { LABELS, LOW_CONFIDENCE, labelMeta } from "../config.js";
+import { sendFeedback } from "../api.js";
 
 function ago(ts, now) {
   const s = Math.max(0, Math.round(now / 1000 - ts));
@@ -9,7 +10,44 @@ function ago(ts, now) {
   return `${Math.floor(s / 3600)}h ago`;
 }
 
-export default function EventFeed({ events, total, status }) {
+function Correct({ event, onCorrected }) {
+  const [open, setOpen] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState(null);
+
+  const choose = async (label) => {
+    setBusy(true); setError(null);
+    try {
+      await sendFeedback(event.id, label, event.text);
+      onCorrected(event.id, label);
+      setOpen(false);
+    } catch (e) {
+      setError(e.message);
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  if (!open) {
+    return <button className="btn btn-ghost btn-sm" onClick={() => setOpen(true)}>
+      {event.corrected_label ? "Change" : "Wrong label?"}
+    </button>;
+  }
+  return (
+    <span className="correct">
+      <label className="sr-only" htmlFor={`fix-${event.id}`}>Correct label</label>
+      <select id={`fix-${event.id}`} className="input input-sm" disabled={busy} autoFocus
+              defaultValue={event.corrected_label || event.label}
+              onChange={(e) => choose(e.target.value)} onKeyDown={(e) => e.key === "Escape" && setOpen(false)}>
+        {Object.entries(LABELS).map(([key, m]) => <option key={key} value={key}>{m.name}</option>)}
+      </select>
+      <button className="btn btn-ghost btn-sm" onClick={() => setOpen(false)}>Cancel</button>
+      {error && <span className="conf-low" role="alert">{error}</span>}
+    </span>
+  );
+}
+
+export default function EventFeed({ events, total, status, onCorrected }) {
   const [now, setNow] = useState(Date.now());
   useEffect(() => {
     const t = setInterval(() => setNow(Date.now()), 1000);
@@ -35,7 +73,7 @@ export default function EventFeed({ events, total, status }) {
       {events.map((e) => {
         const m = labelMeta(e.label);
         const pct = Math.round(e.confidence * 100);
-        const low = e.confidence < 0.5;
+        const low = e.confidence < LOW_CONFIDENCE;
         return (
           <li key={e.id} className="event" style={{ "--accent": m.color }}>
             <div className="event-top">
@@ -44,6 +82,12 @@ export default function EventFeed({ events, total, status }) {
                 <span className="conf-track"><span className="conf-fill" style={{ width: `${pct}%`, background: m.color }} /></span>
                 <span className={low ? "conf-low" : ""}>{pct}%{low ? " · low" : ""}</span>
               </span>
+              {e.corrected_label && (
+                <span className="badge badge-fixed" style={{ color: labelMeta(e.corrected_label).color, borderColor: labelMeta(e.corrected_label).color }}
+                      title={`A person corrected this to ${labelMeta(e.corrected_label).name}`}>
+                  ✓ {labelMeta(e.corrected_label).name}
+                </span>
+              )}
               <span className="event-meta">{ago(e.ts, now)}</span>
             </div>
             <p className="event-text">{e.text}</p>
@@ -51,6 +95,7 @@ export default function EventFeed({ events, total, status }) {
               {(e.top || []).slice(1).map((t) => (
                 <span key={t.label} className="runner">{labelMeta(t.label).name} {Math.round(t.confidence * 100)}%</span>
               ))}
+              <Correct event={e} onCorrected={onCorrected} />
               <span className="event-meta">{e.source} · {e.latency_ms} ms</span>
             </div>
           </li>

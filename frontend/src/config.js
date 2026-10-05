@@ -10,3 +10,6 @@ export const LABELS = {
   feature_request: { name: "Feature request", color: "var(--c-feature)" },
 };
 export const labelMeta = (l) => LABELS[l] || { name: l, color: "var(--muted)" };
+
+// Matches LOW_CONFIDENCE in the backend config (events under this are "low" / need review)
+export const LOW_CONFIDENCE = 0.5;

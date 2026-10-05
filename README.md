@@ -22,6 +22,10 @@ flowchart LR
 - Automatic WebSocket reconnect (exponential backoff 1s → 15s, "Retry now" button), heartbeat pings
 - New visitors instantly see the last events (backend keeps history)
 - Model panel: holdout accuracy, macro-F1 and per-class precision/recall
+- **Try it** box: classify any text on demand (`POST /classify`), without touching the live feed
+- **Wrong label?** on every event: pick the right class, it is saved to `data/feedback.jsonl` and synced to every open dashboard
+- **Needs review** queue: low-confidence events nobody has corrected yet
+- **Export CSV** of the filtered events
 - Dark + light theme (follows your OS), responsive down to phone width, keyboard-accessible
 
 ## Project layout
@@ -36,7 +40,7 @@ flowchart LR
 | `model/inference.py` | `predict(text)` → `(label, confidence, top-3)` |
 | `producer/producer.py` | Pluggable sources: `csv` (default), `rss`, `webhook`, `stdin` |
 | `consumer/consumer.py` | `raw-events` → model → `classified-events`; skips malformed messages, reports latency |
-| `backend/app.py` | FastAPI: WebSocket `/ws`, REST `/health` `/events` `/stats` `/model`, optional `DEMO_MODE` |
+| `backend/app.py` | FastAPI: WebSocket `/ws`, REST (see *Backend API*), Prometheus `/metrics`, optional `DEMO_MODE` |
 | `frontend/` | React + Vite dashboard |
 | `tests/` | `pytest` tests that need no Kafka |
 | `Makefile` | Shortcuts for every step below |
@@ -81,6 +85,38 @@ echo "how do I reset my password" | python3 producer/producer.py --source stdin
 Note the model only knows the 5 ticket labels, so RSS headlines will be classified with low confidence — the
 dashboard flags those as "low". To classify a different domain, replace `data/tickets.csv` (columns `text,label`)
 and re-run `python3 model/train.py`.
+
+### Learning from corrections
+
+```bash
+make retrain          # = python3 model/train.py --with-feedback, then hot-reloads the running backend
+```
+
+Corrections made in the dashboard are appended to `data/feedback.jsonl` (git-ignored). `--with-feedback` adds them to the
+training data (a later correction of the same text wins; the holdout sentences are never trained on), and
+`POST /model/reload` swaps the new model into a running backend with no restart. `metrics.json` records `feedback_rows`.
+
+### Backend API
+
+| Endpoint | What it does |
+|---|---|
+| `GET /events?limit&offset&label&q&min_confidence&needs_review&corrected` | Paged, filtered history (newest first) |
+| `GET /events/export.csv` | Same filters, as a CSV download |
+| `POST /classify` `{"text": "..."}` | Classify one text now (max `MAX_TEXT_LEN` = 2000 chars) |
+| `POST /feedback` `{"event_id", "correct_label"}` / `GET /feedback` | Record a correction / summary (`total`, `model_was_wrong`, `by_label`) |
+| `POST /model/reload` | Load the newest `classifier.pkl` without restarting |
+| `GET /metrics` | Prometheus metrics: events (total + per label), throughput, avg confidence and latency, low-confidence count, corrections, clients, Kafka up/down |
+
+`LOW_CONFIDENCE` (default `0.5`) sets what counts as "low". The dashboard uses the same 50% cut-off.
+
+### Everything in containers (optional)
+
+```bash
+make train && make stack     # Kafka + consumer + backend (http://localhost:8000); run the dashboard and producer as before
+```
+
+The containers reach Kafka on `kafka:29092`; your host tools keep using `localhost:9092`. The trained model is mounted in from
+`model/artifacts/`, and corrections are written to `data/`.
 
 ### Better model (optional)
 
@@ -128,4 +164,6 @@ Weakest class is `billing` (recall 0.60). With only 381 synthetic rows, TF-IDF i
 - [x] README with results
 - [ ] Replace the synthetic tickets with a real labelled dataset
 - [ ] Record a short GIF of the dashboard (`make demo`) and add it above
-- [ ] Containerize backend/consumer in `docker-compose.yml`
+- [x] Containerize backend/consumer in `docker-compose.yml` (`make stack`)
+- [x] Human feedback loop: correct labels in the UI, retrain with `--with-feedback`
+- [x] `/classify`, paged `/events`, CSV export, Prometheus `/metrics`

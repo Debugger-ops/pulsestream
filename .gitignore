@@ -7,3 +7,4 @@ model/artifacts/
 frontend/dist/
 frontend/.env.local
 .pytest_cache/
+data/feedback.jsonl

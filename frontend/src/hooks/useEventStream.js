@@ -5,6 +5,9 @@ const MAX_EVENTS = 200;
 const MAX_POINTS = 60;
 const BACKOFF = [1000, 2000, 4000, 8000, 15000];
 
+const fromEvents = (list) =>
+  Object.fromEntries(list.filter((e) => e.corrected_label).map((e) => [e.id, e.corrected_label]));
+
 /**
  * Connects to the backend WebSocket and keeps dashboard state.
  * - auto-reconnects with exponential backoff (1s -> 15s)
@@ -15,6 +18,7 @@ export function useEventStream() {
   const [events, setEvents] = useState([]);
   const [stats, setStats] = useState(null);
   const [series, setSeries] = useState([]);
+  const [corrections, setCorrections] = useState({});   // event id -> human-corrected label
   const [status, setStatus] = useState("connecting");
   const [retryIn, setRetryIn] = useState(null);
   const attempt = useRef(0);
@@ -46,7 +50,11 @@ export function useEventStream() {
       if (data.type === "history") {
         setEvents(data.events);
         setStats(data.stats);
+        setCorrections((prev) => ({ ...prev, ...fromEvents(data.events) }));
+      } else if (data.type === "feedback") {
+        setCorrections((prev) => ({ ...prev, [data.event_id]: data.corrected_label }));
       } else if (data.type === "event") {
+        setCorrections((prev) => ({ ...prev, ...fromEvents([data.event]) }));
         setEvents((prev) => [data.event, ...prev].slice(0, MAX_EVENTS));
       } else if (data.type === "stats") {
         setStats(data.stats);
@@ -87,6 +95,7 @@ export function useEventStream() {
   }, [connect]);
 
   const clear = useCallback(() => setEvents([]), []);
+  const markCorrected = useCallback((id, label) => setCorrections((prev) => ({ ...prev, [id]: label })), []);
 
-  return { events, stats, series, status, retryIn, reconnectNow, clear };
+  return { events, stats, series, status, retryIn, reconnectNow, clear, corrections, markCorrected };
 }
